@@ -12,6 +12,9 @@ class ChangeUserEnabled extends Controller {
         parent::__construct($AppName, $request);
     }
 
+    /**
+     * @NoAdminRequired
+     */
     public function changeEnabled($checked, $user){
         ($checked === 'false') ? \OC_User::disableUser($user) : \OC_User::enableUser($user);
     }

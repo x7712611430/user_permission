@@ -14,6 +14,9 @@ class GetUserEnabled extends Controller {
         parent::__construct($AppName, $request);
     }
 
+    /**
+     * @NoAdminRequired
+     */
     public function getEnabled(){
 
         $uids = \OCP\User::getUsers();
